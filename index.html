@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário de Refinamentos 2025</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <h1>📅 Calendário de Refinamentos - 2025</h1>
+  <div id="calendar" class="calendar"></div>
+
+  <!-- Overlay para os modais -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Modal de Opções: escolha entre cadastrar ou consultar refinamentos -->
+  <div id="optionModal" class="modal">
+    <h2>Opções</h2>
+    <p>O que deseja fazer?</p>
+    <button id="cadastrarBtn" class="btn">Cadastrar novo refinamento</button>
+    <button id="consultarBtn" class="btn">Consultar refinamentos cadastrados</button>
+    <button id="optionCloseBtn" class="btn btn-danger">Fechar</button>
+  </div>
+
+  <!-- Modal de Cadastro (formulário de refinamento) -->
+  <div id="cadastroModal" class="modal">
+    <h2>Novo Refinamento</h2>
+    <p id="selectedDate"></p>
+    
+    <label for="refinementName">Nome do Refinamento:</label>
+    <input type="text" id="refinementName" placeholder="Título / Descrição breve...">
+    
+    <label for="refinementType">Tipo de Refinamento:</label>
+    <select id="refinementType">
+      <option value="técnico">Técnico</option>
+      <option value="produto">Produto (Análise de Regras)</option>
+    </select>
+
+    <label>Participantes:</label>
+    <div id="participantsContainer"></div>
+    <button id="addParticipantBtn" class="btn">Adicionar Participante</button>
+
+    <p id="sprintInfo"></p>
+    <br>
+    <button id="saveBtn" class="btn">Salvar</button>
+    <button id="cadastroCloseBtn" class="btn btn-danger">Fechar</button>
+  </div>
+
+  <!-- Modal de Consulta: exibe os refinamentos cadastrados e permite deletar -->
+  <div id="consultaModal" class="modal">
+    <h2>Refinamentos Cadastrados</h2>
+    <p id="consultaDate"></p>
+    <div id="consultaContent"></div>
+    <button id="consultaCloseBtn" class="btn btn-danger">Fechar</button>
+  </div>
+
+  <script src="calendar.js"></script>
+</body>
+</html>
